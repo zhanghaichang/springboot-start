@@ -1,0 +1,14 @@
+server.port: 9090
+dubbo.registry.address: 172.16.37.70:2181
+spring.datasource.url: jdbc:h2:tcp://localhost/~/test
+spring.datasource.driver-class-name: org.h2.Driver
+spring.datasource.username: sa
+spring.datasource.password: 
+spring.datasource.initial-size: 1
+spring.datasource.min-idle: 1
+spring.datasource.max-active: 20
+spring.datasource.test-on-borrow: true
+spring.datasource.data: classpath:db/data.sql
+spring.h2.console.enabled: true
+spring.jpa.properties.hibernate.hbm2ddl.auto: create-drop
+spring.jpa.properties.hibernate.show_sql: true

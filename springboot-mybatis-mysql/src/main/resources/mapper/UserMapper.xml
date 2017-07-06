@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dwring.springboot.mapper.UserMapper">
+	<insert id="save" parameterType="com.dwring.springboot.model.User">
+		insert into t_users(id,username,age,password)
+		values(#{id,jdbcType=NUMERIC},#{userName,jdbcType=VARCHAR},#{age,jdbcType=NUMERIC},#{password,jdbcType=VARCHAR})
+	</insert>
+
+	<select id="selectById" resultType="com.dwring.springboot.model.User">
+		select * from t_users where id = #{id,jdbcType=NUMERIC}
+	</select>
+
+	<update id="updateById" parameterType="com.dwring.springboot.model.User">
+		update t_users set
+		username = #{userName,jdbcType=VARCHAR} ,
+		age = #{age,jdbcType=NUMERIC}
+		where id = #{id,jdbcType=NUMERIC}
+	</update>
+
+	<delete id="deleteById">
+		delete from t_users where id = #{id,jdbcType=NUMERIC}
+	</delete>
+
+	<select id="queryAll" resultType="com.dwring.springboot.model.User">
+		select * from t_users
+	</select>
+
+</mapper>  

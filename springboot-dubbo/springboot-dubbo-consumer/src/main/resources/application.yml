@@ -1,0 +1,2 @@
+server.port: 9000
+dubbo.registry.address: 172.16.37.70:2181
