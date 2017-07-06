@@ -1,0 +1,9 @@
+server.port: 8800
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 172.16.37.70:9300
+      local: false
+      repositories:
+        enabled: true

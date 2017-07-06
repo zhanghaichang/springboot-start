@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.platform.dao.SysTenantDatasourceDao">
+	<sql id="menu_column">
+		 td_id,tenant_id,ds_name
+	</sql>
+	
+	<resultMap type="com.qf.platform.entity.SysTenantDatasource" id="sysTenantDatasource">
+		<id column="td_id" property="tdId"/>
+		<result column="tenant_id" property="tenantId"/>
+		<result column="ds_name" property="dsName"/>
+	</resultMap>
+	
+	<select id="findAllTenantDatasource" resultMap="sysTenantDatasource">
+		select 
+		 <include refid="menu_column"></include>
+		 from sys_tenant_datasource ;
+	</select>
+
+</mapper>
