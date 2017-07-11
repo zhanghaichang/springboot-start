@@ -1,2 +1,4 @@
 # springboot-mybatis-mysql
-springboot-mybatis-mysql demo
+* mysql
+* mybatis
+* maven mybatis plus
