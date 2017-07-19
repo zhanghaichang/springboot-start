@@ -4,3 +4,5 @@
 * Apache Maven 3.3.9 
 * Spring boot 1.3.0 +
 * Mysql 5.7
+* Mongodb 3.2
+* Redis 3.2.4
