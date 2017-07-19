@@ -1,51 +1,50 @@
 package com.dwring.springboot.domain;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
+
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by zhanghaichang on 2017/4/9.
  */
-@Component
-@ConfigurationProperties
-public class User{
+@Document(collection="user")
+public class User implements Serializable{
 
-    private String Name;
+	private static final long serialVersionUID = 1L;
+	private String uuid;
+	
+	private String name;
+	
+    private int age;
+    
+	public String getUuid() {
+		return uuid;
+	}
 
-    public String getName() {
-        return Name;
-    }
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "Name='" + Name + '\'' +
-                ", Age=" + Age +
-                '}';
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        Name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public int getAge() {
-        return Age;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public void setAge(int age) {
-        Age = age;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    private int Age;
-
-
-
-
-
-
+	@Override
+	public String toString() {
+		return "User [uuid=" + uuid + ", name=" + name + ", age=" + age + "]";
+	}
 
 
 
