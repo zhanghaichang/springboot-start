@@ -3,11 +3,11 @@
 * Swagger™的目标是为REST APIs 定义一个标准的，与语言无关的接口，使人和计算机在看不到源码或者看不到文档或者不能通过网络流量检测的情况下能发现和理解各种服务的功能。当服务通过Swagger定义，消费者就能与远程的服务互动通过少量的实现逻辑。类似于低级编程接口，Swagger去掉了调用服务时的很多猜测。 
 ***
 ###### 优点
-    * 前后端分离开发
-    * API文档非常明确
-    * 测试的时候不需要再使用URL输入浏览器的方式来访问Controller
-    * 传统的输入URL的测试方式对于post请求的传参比较麻烦（当然，可以使用postman这样的浏览器插件）
-    * spring-boot与swagger的集成简单的一逼
+* 前后端分离开发
+* API文档非常明确
+* 测试的时候不需要再使用URL输入浏览器的方式来访问Controller
+* 传统的输入URL的测试方式对于post请求的传参比较麻烦（当然，可以使用postman这样的浏览器插件）
+* spring-boot与swagger的集成简单的一逼
 ###### 常用的几个注解
 * @Api：用在类上，说明该类的作用
 * @ApiOperation：用在方法上，说明方法的作用
@@ -47,4 +47,3 @@
 * [swagger启动页面](http://localhost:8001/swagger-ui.html)
 * [详细介绍](http://blog.didispace.com/springbootswagger2/)
 * [github](https://github.com/swagger-api/swagger-core/wiki/Annotations#apimodel)
-![Swagger](http://blog.didispace.com/springbootswagger2/#lg=1&slide=0)
