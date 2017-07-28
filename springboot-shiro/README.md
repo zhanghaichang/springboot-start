@@ -13,3 +13,80 @@ Apache Shiro的首要目标是易于使用和理解。安全通常很复杂，�
 * RBAC 是基于角色的访问控制（Role-Based Access Control ）在 RBAC 中，权限与角色相关联，用户通过成为适当角色的成员而得到这些角色的权限。这就极大地简化了权限的管理。这样管理都是层级相互依赖的，权限赋予给角色，而把角色又赋予用户，这样的权限设计很清楚，管理起来很方便。
 * [详细说明文档](http://www.cnblogs.com/ityouknow/p/7089177.html)
 * [Druid Monitor](http://localhost:8088/druid/index.html) username: admin password: admin
+***
+```java
+package com.dwring.springboot.shiro.test;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.subject.Subject;
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import com.dwring.springboot.shiro.Application;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=Application.class)
+public class ShiroTest {
+
+	@Autowired
+	private SecurityManager securityManager;
+	@Test
+	public void checkLoginTest() {
+		SecurityUtils.setSecurityManager(securityManager);
+		Subject subject = SecurityUtils.getSubject();
+		UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123");
+		try {
+			subject.login(token);
+		} catch (AuthenticationException e) {
+
+		}
+		Assert.assertEquals(true, subject.isAuthenticated());
+		subject.logout();
+	}
+}
+
+package com.dwring.springboot.shiro.config;
+
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.realm.Realm;
+
+public class MyRealm1 implements Realm {
+
+	public String getName() {
+		return "myrealm1";
+	}
+
+	public boolean supports(AuthenticationToken token) {
+		return token instanceof UsernamePasswordToken; // 仅支持UsernamePasswordToken类型的Token
+	}
+
+	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token)
+			throws AuthenticationException {
+		UsernamePasswordToken userToken = (UsernamePasswordToken)token;
+		String username = (String) userToken.getUsername(); // 得到用户名
+		String password = new String((char[])userToken.getPassword()); // 得到密码
+		if (!"zhang".equals(username)) {
+			throw new UnknownAccountException(); // 如果用户名错误
+		}
+		if (!"123".equals(password)) {
+			throw new IncorrectCredentialsException(); // 如果密码错误
+		}
+		// 如果身份认证验证成功，返回一个AuthenticationInfo实现；
+		return new SimpleAuthenticationInfo(username, password, getName());
+	}
+
+}
+
+```
