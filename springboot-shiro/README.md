@@ -87,6 +87,34 @@ public class MyRealm1 implements Realm {
 		return new SimpleAuthenticationInfo(username, password, getName());
 	}
 
+}  
+package com.dwring.springboot.shiro.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.apache.shiro.mgt.DefaultSecurityManager;
+import org.apache.shiro.mgt.SecurityManager;
+
+@Configuration
+public class ApplicationConfig {
+
+	@Bean
+	public SecurityManager securityManager() {
+		DefaultSecurityManager securityManager = new DefaultSecurityManager();
+		// 设置realm,这里不设置的话会报错
+		// One or more realms must be present to execute an authentication
+		// attempt. One or more realms must be present to execute an
+		// authentication attempt.
+		securityManager.setRealm(new MyRealm1());
+		return securityManager;
+	}
+
+	@Bean
+	public MyRealm1 myRealml() {
+		return new MyRealm1();
+	}
+
 }
+
 
 ```
