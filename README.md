@@ -6,3 +6,4 @@
 * Mysql 5.7
 * Mongodb 3.2
 * Redis 3.2.4
+* Shiro 1.4.0
