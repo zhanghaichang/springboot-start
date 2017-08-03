@@ -1,0 +1,1 @@
+INSERT INTO `t_users` VALUES ('1', 'zhanghaichang', '30', 'admin');
