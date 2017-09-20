@@ -77,4 +77,15 @@ strategy 属性的默认值
     <version>2.0.0.RC2</version>
 </dependency>
 ```
-
+ ***
+##### H2 Database
+H2 Database做为轻量级的内嵌数据库，功能十分强大，而且运行时只需要一个jar包即可
+更详细的对比见官网页面： [官网](http://www.h2database.com/html/features.html#comparison)
+maven中添加依赖项
+ ```xml
+<dependency>
+   <groupId>com.h2database</groupId>
+   <artifactId>h2</artifactId>
+   <version>1.3.176</version>            
+ </dependency> 
+ ```
