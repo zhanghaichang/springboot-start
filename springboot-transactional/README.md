@@ -9,7 +9,7 @@
 例子中我们使用了默认的事务配置，可以满足一些基本的事务需求，但是当我们项目较大较复杂时（比如，有多个数据源等），这时候需要在声明事务时，指定不同的事务管理器。
 在声明事务时，只需要通过value属性指定配置的事务管理器名即可，例如：@Transactional(value="transactionManagerPrimary")。
 除了指定不同的事务管理器之后，还能对事务进行隔离级别和传播行为的控制，下面分别详细解释：
-#### 隔离级别
+#### 隔离级别 isolation
 隔离级别是指若干个并发的事务之间的隔离程度，与我们开发时候主要相关的场景包括：脏读取、重复读、幻读。
 我们可以看org.springframework.transaction.annotation.Isolation枚举类中定义了五个表示隔离级别的值：
 ```java
@@ -27,7 +27,7 @@ public enum Isolation {
 * `REPEATABLE_READ：`该隔离级别表示一个事务在整个过程中可以多次重复执行某个查询，并且每次返回的记录都相同。即使在多次查询之间有新增的数据满足该查询，这些新增的记录也会被忽略。该级别可以防止脏读和不可重复读。
 * `SERIALIZABLE：`所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，该级别可以防止脏读、不可重复读以及幻读。但是这将严重影响程序的性能。通常情况下也不会用到该级别
 * 指定方法：通过使用isolation属性设置，例如：	@Transactional(isolation = Isolation.DEFAULT)
-#### 传播行为
+#### 传播行为 propagation
 所谓事务的传播行为是指，如果在开始当前事务之前，一个事务上下文已经存在，此时有若干选项可以指定一个事务性方法的执行行为。我们可以看org.springframework.transaction.annotation.Propagation枚举类中定义了6个表示传播行为的枚举值：
 ```java
 public enum Propagation {
