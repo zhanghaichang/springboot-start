@@ -99,7 +99,7 @@ public enum Propagation {
 *   `NESTED`：如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于`REQUIRED`。
 
 指定方法：通过使用`propagation`属性设置，例如：
-	@Transactional(propagation = Propagation.REQUIRED)
+    @Transactional(propagation = Propagation.REQUIRED)
     
 
 * [spring aop 面向切面编程初接触](http://www.cnblogs.com/lic309/p/4079194.html/) 
