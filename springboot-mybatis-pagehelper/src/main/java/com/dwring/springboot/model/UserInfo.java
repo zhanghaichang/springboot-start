@@ -1,10 +1,17 @@
 package com.dwring.springboot.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Table(name = "user_info")
-public class UserInfo {
-    @Id
+public class UserInfo  implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @Column(name = "Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
