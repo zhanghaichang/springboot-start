@@ -10,7 +10,7 @@ Redisson底层采用的是Netty 框架。支持Redis 2.8以上版本，支持Jav
    <version>3.5.5</version>
 </dependency>  
 ```
-## (https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)[分布式锁]
+## [分布式锁](https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)
 
 ### 可重入锁（Reentrant Lock）
 
