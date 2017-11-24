@@ -1,4 +1,4 @@
-# (Redisson)[http://redisson.org/redisson_introduction_zh-cn.html] Java客户端 
+# [Redisson](http://redisson.org/redisson_introduction_zh-cn.html) Java客户端 
 * Redisson是一个在Redis的基础上实现的Java驻内存数据网格（In-Memory Data Grid）。它不仅提供了一系列的分布式的Java常用对象，还提供了许多分布式服务。其中包括(BitSet, Set, Multimap, SortedSet, Map, List, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, AtomicLong, CountDownLatch, Publish / Subscribe, Bloom filter, Remote service, Spring cache, Executor service, Live Object service, Scheduler service) Redisson提供了使用Redis的最简单和最便捷的方法。Redisson的宗旨是促进使用者对Redis的关注分离（Separation of Concern），从而让使用者能够将精力更集中地放在处理业务逻辑上。
 Redisson底层采用的是Netty 框架。支持Redis 2.8以上版本，支持Java1.6+以上版本。
 
@@ -10,7 +10,7 @@ Redisson底层采用的是Netty 框架。支持Redis 2.8以上版本，支持Jav
    <version>3.5.5</version>
 </dependency>  
 ```
-## (分布式锁)[https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8]
+## (https://github.com/redisson/redisson/wiki/8.-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81%E5%92%8C%E5%90%8C%E6%AD%A5%E5%99%A8)[分布式锁]
 
 ### 可重入锁（Reentrant Lock）
 
