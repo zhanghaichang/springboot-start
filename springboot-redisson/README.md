@@ -180,4 +180,3 @@ latch.await();
 RCountDownLatch latch = redisson.getCountDownLatch("anyCountDownLatch");
 latch.countDown();
 ```
-```
