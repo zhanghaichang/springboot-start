@@ -41,4 +41,19 @@ ValidationMessages.properties 文件的编码为ASCII。数据类型为 key valu
  @Pattern(regexp="^[a-zA-Z0-9]+$",message="{account.username.space}")
  @Size(min=3,max=20,message="{account.username.size}")
  ```
-
+ ***
+ 
+```
+200 ok  - 成功返回状态，对应，GET,PUT,PATCH,DELETE.
+ 201 created  - 成功创建。
+ 304 not modified   - HTTP缓存有效。
+ 400 bad request   - 请求格式错误。
+ 401 unauthorized   - 未授权。
+ 403 forbidden   - 鉴权成功，但是该用户没有权限。
+ 404 not found - 请求的资源不存在
+ 405 method not allowed - 该http方法不被允许。
+ 410 gone - 这个url对应的资源现在不可用。
+ 415 unsupported media type - 请求类型错误。
+ 422 unprocessable entity - 校验错误时用。
+ 429 too many request - 请求过多
+ ```
