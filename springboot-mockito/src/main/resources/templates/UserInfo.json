@@ -1,0 +1,64 @@
+{
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"title": "用户信息",
+	"description": "用户验证接口",
+	"additionalProperties": false,
+	"type": "object",
+	"required": true,
+	"properties": {
+		"id": {
+			"minLength": 1,
+			"type": "number",
+			"required": false,
+			"maxLength": 10000000
+		},
+		"username": {
+			"minLength": 1,
+			"type": "string",
+			"required": true,
+			"maxLength": 18
+		},
+		"password": {
+			"minLength": 1,
+			"type": "string",
+			"required": true,
+			"maxLength": 30
+		},
+		"usertype": {
+			"maximum": 9,
+			"type": "number",
+			"minimum": 1,
+			"required": true
+		},
+		"enabled": {
+			"minLength": 0,
+			"type": "number",
+			"required": true,
+			"maxLength": 1
+		},
+		"realname": {
+			"minLength": 1,
+			"type": "string",
+			"required": true,
+			"maxLength": 30
+		},
+		"qq": {
+			"maximum": 99999999999,
+			"type": "number",
+			"minimum": 1,
+			"required": true
+		},
+		"email": {
+			"minLength": 1,
+			"type": "string",
+			"required": true,
+			"maxLength": 30
+		},
+		"tel": {
+			"maximum": 99999999999,
+			"type": "number",
+			"minimum": 0,
+			"required": false
+		}
+	}
+}
