@@ -23,4 +23,4 @@ HAL-browser 是基于hal+json的media type的API浏览器，Spring Data Rest 提
 
 启动我们的程序，打开浏览器 [地址](https://localhost:8433/api/v1/browser/index.html#/api/v1)
 
-> api/v1 是我指定的接口前缀，通过配置项 spring.data.rest.base-path 指定
+> api/v1 是我指定的接口前缀，通过application.properties配置项 spring.data.rest.base-path 指定
