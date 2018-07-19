@@ -8,6 +8,27 @@
 * 根据model，维护实体之间的关系
 * 支持分页
 
+
+此时使用GET访问http://localhost:8080/persons/search/nameStartsWith?name=kevin,可实现查询操作
+
+> http://localhost:8080/persons/?page=1&size=2　　　　分页查询，page-1即第2页，size=2即每页数量为2
+
+> http://localhost:8080/persons/?sort=age,desc　　　　  排序，即按照age属性倒序
+
+ 
+
+POST请求
+
+> http://localhost:8080/persons ,并将数据放到请求体中　　　　　　保存
+
+> http://localhost:8080/persons/21,并将数据放到请求体中　　　　  更新
+
+ 
+
+DELETE请求
+
+> http://localhost:8080/persons/21    　　　　　　　　　　　　　 删除
+
 诸多的特性，[官方文档](http://docs.spring.io/spring-data/rest/docs/2.6.3.RELEASE/reference/html/ "官方文档")都会有提及。这里我们着重关注在Spring Data Rest中基于JPA维护实体之间关系。
 
 ## HAL Browser 使用
