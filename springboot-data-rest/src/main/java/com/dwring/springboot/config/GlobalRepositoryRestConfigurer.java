@@ -1,4 +1,4 @@
-package com.dwring.spring.config;
+package com.dwring.springboot.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
