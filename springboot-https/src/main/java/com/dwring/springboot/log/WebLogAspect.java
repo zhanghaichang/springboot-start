@@ -21,7 +21,7 @@ public class WebLogAspect {
 
 	ThreadLocal<Long> startTime = new ThreadLocal<>();
 
-	@Pointcut("execution(public * com.qf.springboot.controller..*.*(..))")
+	@Pointcut("execution(public * com.dwring.springboot.controller..*.*(..))")
 	public void webLog() {
 	}
 
