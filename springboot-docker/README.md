@@ -10,6 +10,7 @@
 * 6.运行docker容器
 * 7.查看正在运行的容器
 * 8.启动/关闭/重启/删除docker容器
+* 9. 查看docker 日志
 
 ## 1. 创建一个简单的spring-boot应用
 
@@ -27,14 +28,14 @@ pom.xml中添加依赖:
 ```java
 @Controller
 public class HelloWorld{
-    @GetMapping("/hello")
+    @GetMapping("/docker")
     public void helloworld(HttpServletResponse response) throws IOException {
         response.getWriter().write("Hello Spring-boot");
     }
 }
 ```
 
-运行项目,访问: http://localhost:8080/hello,如果出现: Hello Spring-boot 第二步完成.
+运行项目,访问: http://localhost:8080/docker,如果出现: Hello Spring-boot 第二步完成.
 
 ## 3. 容器化应用
 在项目目录创建Dockerfile文件: src/main/docker/Dockerfile(没有后缀),内容如下:
@@ -90,7 +91,7 @@ mvn package -Dmaven.test.skip=true docker:build
 
 docker run --name=springboot-docker-demo -p 8080:8080 -t ramer/demo
 
-在浏览器访问: http://localhost:8080/hello
+在浏览器访问: http://localhost:8080/docker
 
 ## 7. 查看正在运行的容器
 cmd: docker ps
@@ -101,3 +102,7 @@ cmd: docker start/stop/restart/rm CONTAINER_ID/NAME
 其中: 
 CONTAINER_ID: 是容器id,执行 docker ps 可查看 
 NAME: 是容器的名称,也就是docker run –name后面的名字
+
+## 9. 查看docker应用日志
+
+cmd: docker logs -f springboot-docker-demo

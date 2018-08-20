@@ -10,7 +10,7 @@
         <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.qf.springboot.util.MyMapper"/>
+            <property name="mappers" value="com.dwring.springboot.util.MyMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
@@ -19,11 +19,11 @@
                         password="${spring.datasource.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.qf.springboot.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.dwring.springboot.model" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="com.qf.springboot.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.dwring.springboot.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <table tableName="company">
