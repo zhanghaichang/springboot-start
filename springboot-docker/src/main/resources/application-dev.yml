@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springboot-docker-demo
+    name: springboot-docker-demo-dev
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
