@@ -33,3 +33,7 @@ logging:
   level:
     tk:
       mybatis: TRACE
+info:
+  app:
+    version: v1.2.0
+    name: prod
