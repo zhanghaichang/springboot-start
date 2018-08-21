@@ -89,7 +89,7 @@ mvn package -Dmaven.test.skip=true docker:build
 
 ## 6. 运行docker容器最好添加 --name参数
 
-docker run --name=springboot-docker-demo -p 8080:8080 -t ramer/demo
+docker run --name=springboot-docker-demo -p 8080:8080 -e spring.profiles.active=dev -d ramer/demo
 
 在浏览器访问: http://localhost:8080/docker
 
