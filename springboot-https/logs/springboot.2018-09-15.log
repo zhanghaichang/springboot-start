@@ -1,0 +1,40 @@
+2018-09-15 21:40:38.934 [main] INFO  com.dwring.springboot.Application -Starting Application on DESKTOP-KBUUUEL with PID 14036 (D:\github\springboot-start\springboot-https\target\classes started by zhanghaichang in D:\github\springboot-start\springboot-https)
+2018-09-15 21:40:38.936 [main] INFO  com.dwring.springboot.Application -No active profile set, falling back to default profiles: default
+2018-09-15 21:40:38.971 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d83da2e: startup date [Sat Sep 15 21:40:38 CST 2018]; root of context hierarchy
+2018-09-15 21:40:39.048 [background-preinit] INFO  org.hibernate.validator.internal.util.Version -HV000001: Hibernate Validator 5.3.5.Final
+2018-09-15 21:40:40.692 [main] INFO  org.xnio -XNIO version 3.3.8.Final
+2018-09-15 21:40:40.708 [main] INFO  org.xnio.nio -XNIO NIO Implementation Version 3.3.8.Final
+2018-09-15 21:40:41.618 [main] WARN  io.undertow.websockets.jsr -UT026009: XNIO worker was not set on WebSocketDeploymentInfo, the default worker will be used
+2018-09-15 21:40:41.618 [main] WARN  io.undertow.websockets.jsr -UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2018-09-15 21:40:41.638 [main] INFO  io.undertow.servlet -Initializing Spring embedded WebApplicationContext
+2018-09-15 21:40:41.638 [main] INFO  org.springframework.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 2667 ms
+2018-09-15 21:40:41.796 [main] INFO  o.s.boot.web.servlet.ServletRegistrationBean -Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-15 21:40:41.803 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-15 21:40:41.805 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-15 21:40:41.805 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-15 21:40:41.805 [main] INFO  o.s.boot.web.servlet.FilterRegistrationBean -Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-15 21:40:42.858 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/exception],methods=[GET]}" onto public com.dwring.springboot.model.BaseResponse<java.lang.String> com.dwring.springboot.controller.UserController.exception()
+2018-09-15 21:40:42.859 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/],methods=[POST]}" onto public com.dwring.springboot.model.BaseResponse<java.lang.String> com.dwring.springboot.controller.UserController.creatUser(java.lang.String)
+2018-09-15 21:40:42.860 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/{id}],methods=[PUT]}" onto public com.dwring.springboot.model.BaseResponse<com.dwring.springboot.model.UserInfo> com.dwring.springboot.controller.UserController.updateUser(java.lang.Integer,com.dwring.springboot.model.UserInfo)
+2018-09-15 21:40:42.860 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/{id}],methods=[GET]}" onto public com.dwring.springboot.model.BaseResponse<com.dwring.springboot.model.UserInfo> com.dwring.springboot.controller.UserController.loadUser(java.lang.Integer)
+2018-09-15 21:40:42.861 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/],methods=[GET]}" onto public com.dwring.springboot.model.BaseResponse<java.util.Collection<com.dwring.springboot.model.UserInfo>> com.dwring.springboot.controller.UserController.getUserList()
+2018-09-15 21:40:42.862 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/users/{id}],methods=[DELETE]}" onto public com.dwring.springboot.model.BaseResponse<java.lang.Boolean> com.dwring.springboot.controller.UserController.deleteUser(java.lang.Integer)
+2018-09-15 21:40:42.865 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/weather/shanghai],methods=[GET]}" onto public com.dwring.springboot.model.BaseResponse<java.lang.String> com.dwring.springboot.controller.WeatherController.getWeather()
+2018-09-15 21:40:42.866 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-09-15 21:40:42.870 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-09-15 21:40:42.871 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-09-15 21:40:42.872 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-09-15 21:40:42.877 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-15 21:40:42.878 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-15 21:40:43.271 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@d83da2e: startup date [Sat Sep 15 21:40:38 CST 2018]; root of context hierarchy
+2018-09-15 21:40:43.501 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-15 21:40:43.501 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-15 21:40:43.521 [main] INFO  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver -Detected @ExceptionHandler methods in globalExcetionHandler
+2018-09-15 21:40:43.547 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-15 21:40:43.729 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter -Registering beans for JMX exposure on startup
+2018-09-15 21:40:43.736 [main] INFO  o.s.context.support.DefaultLifecycleProcessor -Starting beans in phase 2147483647
+2018-09-15 21:40:43.737 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -Context refreshed
+2018-09-15 21:40:43.757 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper -Found 1 custom documentation plugin(s)
+2018-09-15 21:40:43.777 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner -Scanning for api listing references
+2018-09-15 21:40:44.032 [main] INFO  o.s.b.c.e.u.UndertowEmbeddedServletContainer -Undertow started on port(s) 8088 (https)
+2018-09-15 21:40:44.036 [main] INFO  com.dwring.springboot.Application -Started Application in 5.458 seconds (JVM running for 5.971)

@@ -14,7 +14,8 @@ public class ConsumerController {
 
 	@RequestMapping("/kafka")
 	@ResponseBody
-	public void  loadMsg() {
-		kafkaTemplate.send("test1","kafkaKey","hello world.");
+	public String loadMsg() {
+		kafkaTemplate.send("test1", "zhanghaichang2019", "hello world.");
+		return "Successfully";
 	}
 }

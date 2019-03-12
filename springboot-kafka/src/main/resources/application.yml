@@ -2,7 +2,7 @@ server.port: 9090
 
 #kafka
 # 指定kafka 代理地址，可以多个
-spring.kafka.bootstrap-servers: 172.16.37.70:9092
+spring.kafka.bootstrap-servers: 47.106.217.33:9092
 # 指定默认消费者group id
 spring.kafka.consumer.group-id: myGroup
 # 指定默认topic id
