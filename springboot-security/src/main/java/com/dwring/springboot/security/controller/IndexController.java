@@ -1,18 +1,23 @@
 package com.dwring.springboot.security.controller;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.dwring.springboot.security.domain.BaseResponse;
 
-@Controller
+@RequestMapping("/index")
+@RestController
 public class IndexController {
 
-	@RequestMapping(name="/")
-	public String index(){
-		return "index";
+	@GetMapping("/hello")
+	public BaseResponse<Object> hello() {
+		return new BaseResponse<Object>(200,"normal role");
 	}
-	
-	 @RequestMapping("/hello")
-	    public String hello() {
-	        return "hello";
-	    }
+
+	@PreAuthorize("hasAuthority('admin')")
+	@GetMapping("/admin")
+	public BaseResponse<Object> admin() {
+		return new BaseResponse<Object>(200,"admin role");
+	}
 }
