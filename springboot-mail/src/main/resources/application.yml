@@ -1,0 +1,33 @@
+spring:
+  #邮箱配置
+  mail:
+    host: smtp.qq.com
+    username: zhanghaichang@vip.qq.com
+    #QQ邮箱的授权码
+    password: nzpoymzmqlnmbibb
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  freemarker:
+    content-type: text/html
+    #后缀名
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+
+  #freemarker配置
+
+#设置一个邮件发送人
+lance:
+  mail:
+    sender: zhanghaichang@vip.qq.com
+    
+DEST: target/HelloWorld_CN_HTML_FREEMARKER.pdf
+HTML: resume_template.ftl
+FONT: simhei.ttf
