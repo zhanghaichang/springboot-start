@@ -15,6 +15,6 @@ public interface UserRepository extends JpaRepository<User,Long>{
 	
 	@Modifying(clearAutomatically = true)
 	@Query(value = "update User u set u.accessToken=:accessToken where u.id=:id")
-	void update(@Param("accessToken") String accessToken, @Param("id") Long id);
+	void updateUser(@Param("accessToken") String accessToken, @Param("id") Long id);
 
 }

@@ -12,16 +12,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+
+import com.dwring.springboot.security.domain.AccessToken;
 import com.dwring.springboot.security.service.UserService;
 import com.dwring.springboot.security.utils.JwtHelper;
-import lombok.extern.slf4j.Slf4j;
 
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Token过滤器
  *
- * @author hackyo
- * Created on 2017/12/8 9:28.
+ * @author hackyo Created on 2017/12/8 9:28.
  */
 @Slf4j
 @Component
@@ -45,18 +46,23 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 		String tokenHeader = "Bearer ";
 		if (authHeader != null && authHeader.startsWith(tokenHeader)) {
 			String authToken = authHeader.substring(tokenHeader.length());
+			log.info("========doFilterInternal authToken:{}",authToken);
 			String username = jwtHelper.getUserNameFromToken(authToken);
 			if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 				UserDetails userDetails = userService.loadUserByUsername(username);
-				if (jwtHelper.validateToken(authToken, userDetails)) {
+				AccessToken accessToken = jwtHelper.getAccessToken(authToken);
+				if (userService.validateSessionToken(accessToken)) {
 					UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 							userDetails, null, userDetails.getAuthorities());
 					authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 					SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+					log.info("-------authenticationToken:{}", authenticationToken);
+				} else {
+					log.info("-------validateToken 无效！");
 				}
+			} else {
+				log.error(request.getParameter("username") + " :Token is null");
 			}
-		} else {
-			log.error(request.getParameter("username") + " :Token is null");
 		}
 		filterChain.doFilter(request, response);
 	}

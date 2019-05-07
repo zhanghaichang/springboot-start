@@ -49,6 +49,15 @@ public class User implements UserDetails {
 	private String name;
 	private String password;
 	private String accessToken;
+	private String imeiNo;
+
+	public String getImeiNo() {
+		return imeiNo;
+	}
+
+	public void setImeiNo(String imeiNo) {
+		this.imeiNo = imeiNo;
+	}
 
 	public String getAccessToken() {
 		return accessToken;

@@ -19,6 +19,6 @@ public class LoginController {
 
 	@RequestMapping(value = "/api/login", method = RequestMethod.POST)
 	public BaseResponse<UserResponse> login(@RequestBody UserRequest user, Device device) {
-		return new BaseResponse<UserResponse>(userService.login(user.getUsername(), user.getPassword(), device), 200);
+		return new BaseResponse<UserResponse>(userService.login(user, device), 200);
 	}
 }

@@ -16,11 +16,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
-import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
@@ -47,10 +44,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JwtAuthenticationEntryPointHandler unauthorizedHandler;
 
-
-	@Autowired
-	private TokenStore tokenStore;
-
 	@Override
 	public void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.exceptionHandling().accessDeniedHandler(accessDeniedHandler).and()
@@ -73,7 +66,6 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.userDetailsService).passwordEncoder(passwordEncoder);
 	}
-
 
 	@Bean
 	@Override
