@@ -37,8 +37,6 @@ import io.swagger.annotations.ApiOperation;
 @Api("userController相关api")
 public class UserController {
 
-	@Autowired
-	private MailUtil mailUtil;
 	
 	static Map<Integer, UserInfo> users = Collections.synchronizedMap(new HashMap<Integer, UserInfo>());
 
@@ -105,13 +103,5 @@ public class UserController {
 		throw new BizException("用户自定义异常。");
 	}
 	
-	@RequestMapping(value = "/email", method = RequestMethod.GET)
-	public BaseResponse<?> emailSend() {
-		MailBean mailBean=new MailBean();
-		mailBean.setSubject("测试邮件");
-		mailBean.setRecipient("zhanghaichang@163.com");
-		mailBean.setContent("主题：这是模板邮件");
-		mailUtil.sendTemplateMail(mailBean);
-		return new BaseResponse<>();
-	}
+
 }

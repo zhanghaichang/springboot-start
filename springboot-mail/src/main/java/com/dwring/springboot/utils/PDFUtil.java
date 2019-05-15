@@ -1,14 +1,23 @@
 package com.dwring.springboot.utils;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.tool.xml.XMLWorkerFontProvider;
+import com.itextpdf.tool.xml.XMLWorkerHelper;
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.xhtmlrenderer.pdf.ITextFontResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.charset.Charset;
 import java.util.Locale;
+import java.util.Map;
  
  
 /**
@@ -23,6 +32,8 @@ public class PDFUtil {
     private static boolean DEFAULT_NOCACHE=true;
     private static String HEADER_ENCODING="utf-8";
     private static String HEADER_NOCACHE="no-cache";
+    
+    private static Configuration freemarkerCfg = null;
  
     /**
      * 生成PDF文件流
@@ -122,4 +133,55 @@ public class PDFUtil {
         } catch (UnsupportedEncodingException e) {
         }
     }
+    
+    public static void createPdf(String content, String dest) throws IOException, DocumentException {
+		Document document = new Document();
+		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(dest));
+		document.open();
+		XMLWorkerFontProvider fontImp = new XMLWorkerFontProvider(XMLWorkerFontProvider.DONTLOOKFORFONTS);
+		fontImp.register("/simhei.ttf");
+		XMLWorkerHelper.getInstance().parseXHtml(writer, document, new ByteArrayInputStream(content.getBytes("UTF-8")),
+				null, Charset.forName("UTF-8"), fontImp);
+		document.close();
+
+	}
+
+	/**
+	 * freemarker渲染html
+	 */
+	public  static  String freeMarkerRender(Map<String, Object> data, String htmlTmp) {
+		Writer out = new StringWriter();
+
+		try {
+			// 获取模板,并设置编码方式
+			setFreemarkerCfg();
+			Template template = freemarkerCfg.getTemplate(htmlTmp);
+			// 将合并后的数据和模板写入到流中，这里使用的字符流
+			template.process(data, out);
+			out.flush();
+			return out.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				out.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * 设置freemarkerCfg
+	 */
+	private static void setFreemarkerCfg() {
+		freemarkerCfg = new Configuration();
+		// freemarker的模板目录
+		try {
+			freemarkerCfg.setDirectoryForTemplateLoading(new ClassPathResource("templates").getFile());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
