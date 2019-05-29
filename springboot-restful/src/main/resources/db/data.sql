@@ -1,0 +1,13 @@
+INSERT INTO user_info(Id,username,password,usertype,enabled,realname,qq,email,tel) VALUES ('1', 'test1', '12345678', '1', null, null, null, null, null);
+INSERT INTO user_info(Id,username,password,usertype,enabled,realname,qq,email,tel) VALUES ('2', 'test2', '121', '2', null, null, null, null, null);
+INSERT INTO user_info(Id,username,password,usertype,enabled,realname,qq,email,tel) VALUES ('3', 'test3', '121', '1', null, null, null, null, null);
+INSERT INTO user_info(Id,username,password,usertype,enabled,realname,qq,email,tel) VALUES ('4', 'test4', '111', '2', null, null, null, null, null);
+INSERT INTO user_info(Id,username,password,usertype,enabled,realname,qq,email,tel) VALUES ('5', 'test5', '2222', '1', null, null, null, null, null);
+INSERT INTO country VALUES (1,'Angola','AO');
+INSERT INTO country VALUES (2,'Afghanistan','AF');
+INSERT INTO country VALUES (3,'Albania','AL');
+INSERT INTO country VALUES (4,'Algeria','DZ');
+INSERT INTO country VALUES (5,'Andorra','AD');
+INSERT INTO country VALUES (6,'Anguilla','AI');
+INSERT INTO country VALUES (7,'Antigua and Barbuda','AG');
+INSERT INTO country VALUES (8,'Argentina','AR');
